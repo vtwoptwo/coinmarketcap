@@ -14,8 +14,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/vtwoptwo/ie-backend">
-    <img src="static\images\logo.jpeg" alt="Logo" style="border-radius: 25px; width:100px" >
+  <a>
+    <img src="backend_api\static\images\logo.jpeg" alt="Logo" style="border-radius: 25px; width:100px" >
   </a>
 
 <h3 align="center">CoinMarketCap</h3>
@@ -35,9 +35,9 @@ Such information is available at CoinMarketCap, a popular site that offers real 
     ·
     <a href=#usage>How to use this repo</a>
     ·
-    <a href="https://github.com/vtwoptwo/ie-backend/issues">Report Bug</a>
+    <a href="https://github.com/vtwoptwo/coinmarketcap/issues">Report Bug</a>
     ·
-    <a href="https://github.com/vtwoptwo/ie-backend/issues">Request Feature</a>
+    <a href="https://github.com/vtwoptwo/coinmarketcap/issues">Request Feature</a>
   </p>
 </div>
 
@@ -56,7 +56,6 @@ Such information is available at CoinMarketCap, a popular site that offers real 
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -88,7 +87,7 @@ Further Requirements:
 * Set up a system that runs this process once every minute
 
 
-PS: I ended up using the following endpoint: Crypto Listings Latest(https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyListingsLatest) ,  which has the same structure as the historical endpoint and falls under the BASIC subscription. 
+PS: I ended up using the following endpoint: [Crypto Listings Latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyListingsLatest) ,  which has the same structure as the historical endpoint and falls under the BASIC subscription. 
 
 
 <br>
@@ -98,14 +97,15 @@ PS: I ended up using the following endpoint: Crypto Listings Latest(https://coin
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+***
 
 ### Built With
 
-* [![HTML][HTML]][HTML-url]
+* ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 * [![MongoDB][MongoDB]][MongoDB-url]
 * [![Flask][Flask]][Flask-url]
-
+* ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ### Tools Used
 
 * [![Postman][Postman]][Postman-url]
@@ -115,7 +115,7 @@ PS: I ended up using the following endpoint: Crypto Listings Latest(https://coin
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+***
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -126,45 +126,56 @@ Checked out the CoinMarketCap Postman collection which you can directly import i
 
 
 If you dont have a collection yet you can use the following code to create/drop a collection in a mongodb database: 
-´´´sh
-    #mongo =  being the URI-generated database in python flask 
-    #create + drop functions come from PyMongo
 
+* mongo =  being the URI-generated database in python flask 
+    
+* create + drop functions come from PyMongo
+
+```sh
     print("Creating coins collection...")
     mongo.db.create_collection("coins")
     print("Dropping coins collection...")
     mongo.db.coins.drop()
-´´´
+```
 
 Understood how to use the MarketCap Api
-* Link 1
-* Link 2
+* [V1 Crypto Listings Latest](https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyListingsLatest) 
+
+* The parameters are defined based on the requirements listed above: 
+
+```sh
+params = {
+    "sort": "market_cap",
+    "sort_dir": "desc",
+    "limit": 10
+}
+
+```
 
 
 
 
-### Prerequisites
+* [Authentication](https://coinmarketcap.com/api/documentation/v1/#section/Authentication)
 
-
-You will need the following software downloaded on your workstation:
-
-* [Postman](https://www.postman.com/downloads/)
+```sh
+headers = {
+    "Accepts": "application/json",
+    "X-CMC_PRO_API_KEY": KEY
+}
+```
 
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/vtwoptwo/ie-backend.git
+   git clone https://github.com/vtwoptwo/coinmarketcap.git
    ```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-
-
+***
 
 
 <!-- USAGE EXAMPLES -->
@@ -174,9 +185,37 @@ You will need the following software downloaded on your workstation:
 
 
 ## Usage
+Check out the outcome: 
+<div align="center">
+  <a>
+    <img src="backend_api\static\images\mongodb_coinmarketcap.JPG ">
+  </a>
+</div>
+
+<div align="center">
+  <a>
+    <img src="backend_api\static\images\">
+  </a>
+</div>
+
+<div align="center">
+  <a>
+    <img src="backend_api\static\images\">
+  </a>
+</div>
+
+<div align="center">
+  <a>
+    <img src="backend_api\static\images\">
+  </a>
+</div>
 
 
-
+<div align="center">
+  <a>
+    <img src="backend_api\static\images\">
+  </a>
+</div>
 
 
 <!-- ROADMAP -->
@@ -185,10 +224,14 @@ Make sure you have everything downloaded from the [pre-requisites](#prerequisite
 
 ### Set-Up
 
-1. Download MongoDB 
+1. Download MongoDB
 
-I created an account 
-Downloaded the commmunity edition 
+
+*  I created an account and downloaded the commmunity edition 
+* I created a mongodb:// database to test locally
+
+
+
 
 
 2. Set up a .venv env in my local folder
@@ -204,13 +247,24 @@ psycopg2==2.9.3
 python-dotenv==0.21.0
 pytest
 pytest-cov
+pymongo==3.1
+requests==2.26.0
+click==8.1.3
+colorama==0.4.6
+Flask==2.2.2
+Flask-PyMongo==2.0.1
+greenlet==1.1.3.post0
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.1
+Werkzeug==2.2.2
   ```
 
 ```sh
 pip install -r ./requirements.txt
 ```
 
-X. Make a get_data.py file and make sure you are receiving the right data: 
+4. Make a get_data.py file and make sure you are receiving the right data: 
 
 Your response should resemble the following: 
 
@@ -230,6 +284,52 @@ Your response should resemble the following:
 
 ```
 
+5. Make sure you are pushing the data into your collection
+
+```sh
+def call(): 
+    response = requests.get(BASE+ENDPOINT, params=params, headers=headers)
+    print(response)
+    data = response.json()
+
+    total_market_cap = 0
+
+    for coin in data["data"]:
+        total_market_cap += coin["quote"]["USD"]["market_cap"]
+
+    for coin in data["data"]:
+        symbol = coin["symbol"]
+        price = coin["quote"]["USD"]["price"]
+        market_cap = coin["quote"]["USD"]["market_cap"]
+        market_cap_pct = market_cap / total_market_cap
+        last_updated = coin["last_updated"]
+
+
+        document = {
+            "symbol": symbol,
+            "price": price,
+            "market_cap": market_cap,
+            "market_cap_pct": market_cap_pct,
+            "last_updated": last_updated
+        }
+
+        
+        collection.insert_one(document)
+
+```
+alternatively you could also use the following: * 
+```sh
+collection.insert_many(documents)
+```
+
+
+6. Note that Imade two files: one an executable and one a function to push to the mongodb collection. 
+
+* This way I can either choose to run the process with a cron job every minute by running the get_data.py file,  or create a website with a frontend which runs the api calls at the press of a button. 
+
+* Limitations: The api call should only  be called every 60 seconds, as that is when the data renews at the endpoint.
+
+
 
 
 
@@ -246,39 +346,48 @@ I find vue.js much easier to implement and would do so if this were a larger pro
 
 ### Extracredit
 
+How would you set up a system that runs this process once every minute?
+
+I would use a Linux/Unix CLI. This way I can run the python script automatically at whichever interval I want. Check out more info here: [Medium - Scheduling python scripts](https://towardsdatascience.com/how-to-schedule-python-scripts-with-cron-the-only-guide-youll-ever-need-deea2df63b4e)
+
+Steps: 
+
+1. Configure a cron file
+
+```sh 
+crontab -e
+```
+
+```sh 
+***** /path/2/py /path/2/get_data.py
+```
+
+### Configuration Management for Production
+1. Change the environment variables (I had a .env file locally), but you can use GITHUB secrets, or depending on your cloud service provider (e.g. Azure) you can globally configure environment variables for the web app. 
+
+The following files were used to prepare the document for production: 
+
+* create a .env
+* config.py
+* __init__.py
 
 
+### Creating Different Pipelines in Github
 
-### Configuration Management 
-1. Config Files
-create a .env
-config.py
-and update __init__.py
+1. Go to GitHub Actions
 
-2. Azure WebApp for backend
-create a web app in azure
+2. Create a Build and a separate deploy workflow (You can do for both dev, prod, or test mode)
 
-inside the webapp go to deployment center>settings>source>GitHub
-select your repo
-select new workflow
-
-go to config
-set the environment variables 
+3. Use .yaml files to configure the workflow
 
 
-### Creating Different Pipelines
-### 
-  
+### Next Steps 
 
- 
- 
-
-
-See the [open issues](https://github.com/vtwoptwo/ie-backend/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/vtwoptwo/coinmarketcap/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+***
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -291,7 +400,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 Don't forget to give the project a star! Thanks again!
 
-1. Fork the Project
+1. Fork the Project and create a feature: 
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
@@ -299,7 +408,7 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+***
 
 <!-- LICENSE -->
 ## License
@@ -308,19 +417,19 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+***
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/vtwoptwo/ie-backend.svg?style=for-the-badge
-[contributors-url]: https://github.com/vtwoptwo/ie-backend/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/vtwoptwo/ie-backend.svg?style=for-the-badge
-[forks-url]: https://github.com/vtwoptwo/ie-backend/network/members
-[stars-shield]: https://img.shields.io/github/stars/vtwoptwo/ie-backend.svg?style=for-the-badge
-[stars-url]: https://github.com/vtwoptwo/ie-backend/stargazers
-[issues-shield]: https://img.shields.io/github/issues/vtwoptwo/ie-backend.svg?style=for-the-badge
-[issues-url]: https://github.com/vtwoptwo/ie-backend/issues
-[license-shield]: https://img.shields.io/github/license/vtwoptwo/ie-backend.svg?style=for-the-badge
-[license-url]: https://github.com/vtwoptwo/ie-backend/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/vtwoptwo/coinmarketcap.svg?style=for-the-badge
+[contributors-url]: https://github.com/vtwoptwo/coinmarketcap/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vtwoptwo/coinmarketcap.svg?style=for-the-badge
+[forks-url]: https://github.com/vtwoptwo/coinmarketcap/network/members
+[stars-shield]: https://img.shields.io/github/stars/vtwoptwo/coinmarketcap.svg?style=for-the-badge
+[stars-url]: https://github.com/vtwoptwo/coinmarketcap/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vtwoptwo/coinmarketcap.svg?style=for-the-badge
+[issues-url]: https://github.com/vtwoptwo/coinmarketcap/issues
+[license-shield]: https://img.shields.io/github/license/vtwoptwo/coinmarketcap.svg?style=for-the-badge
+[license-url]: https://github.com/vtwoptwo/coinmarketcap/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/vera-prohaska-31734b1b5/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
@@ -351,3 +460,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Docker-url]: https://www.docker.com/
 [MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
 [MongoDB-url]: https://www.mongodb.com/home
+
