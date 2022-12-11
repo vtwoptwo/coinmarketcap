@@ -1,4 +1,4 @@
-# Backend for Account Manager
+# Coin Market Cap Endpoint: Listings/Latest
 
 <!-- PROJECT SHIELDS -->
 
