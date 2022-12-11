@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My HTML Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+{% block head %}
+<body>
+    <div class="menu">
+     
+        <a href = "https://coinmarketcap.com/" class="menu-item"><img src = "{{url_for('static', filename= 'images/logo.jpeg')}}" style="border-radius: 10px; height: 40px;"></a>
+        <a href="{{url_for('index')}}" class="menu-item">Home</a>
+        <a href="{{url_for('get_coins')}}" class="menu-item">Coins</a>
+        <a href="{{url_for('about')}}" class="menu-item">About</a>
+        <a href="https://github.com/vtwoptwo/coinmarketcap" class="menu-item">          © created by vera </a>
+        {% endblock %}
+   
+    </div>    
+
+    {% block content %}
+    <h1>My HTML Page</h1>
+    <p>This is my basic HTML page with a CSS style sheet and a sticky menu.</p>
+    {% endblock %}
+
+</body>
+</html>
+{% block footer %}
+<footer>
+
+    
+      <div id="footer">
+    
+        <p>Copyright © Your Website</p>
+      
+        <script>
+          // JavaScript for the current year in the copyright
+          let date = new Date();
+          let year = date.getFullYear();
+          document.querySelector('#footer p').innerHTML = 'Copyright &copy; Your Website ' + year;
+        </script>
+      </div>
+      
+
+</footer>
+
+{% endblock %}
+
+</html>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Coins</h1>
+  <p>This is the coins page of my Flask application.</p>
+    <button onclick = "pull_from_api()">Call API</button>
+      <div id="table-wrapper">
+        <div id="table-scroll">
+          <table id="modern-table">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Symbol Price</th>
+                <th>Market Cap</th>
+                <th>Market Cap %</th>
+                <th>Last Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for coin in coins %} 
+                <tr>
+                    <td>{{coin.symbol}}</td>
+                    <td>{{coin.rice}}</td>
+                    <td>{{coin.market_cap}}</td>
+                    <td>{{coin.market_cap_pct}}</td>
+                    <td>{{coin.last_updated}}</td>
+            
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <script>
+      function pull_from_api() {
+     
+          fetch('/api_call', {methods: "GET"})
+          location.reload();
+          fetch('/coins', {methods: "GET"})
+      }
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Main colors: orange and blue */
+:root {
+    --orange: #ffa500;
+    --blue: #0066cc;
+}
+
+.menu {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #333;
+color: white;
+}
+
+.menu-item {
+padding: 10px 20px;
+text-decoration: none;
+color: white;
+}
+
+.menu-time img {
+    width: 5px;
+}
+
+.menu-item:hover {
+background-color: #444;
+}
+
+.menu-item.active {
+background-color: var(--orange);
+}
+
+/* CSS for styling the table and center it */
+table#modern-table {
+    /*center the table*/
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 50%;
+
+    border-collapse: collapse;
+  }
+  
+  table#modern-table thead th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+  }
+  
+  table#modern-table td,
+  table#modern-table th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table#modern-table tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  table#modern-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+    }
+
+    #table-wrapper {
+        position:relative;
+      }
+      #table-scroll {
+        height:500px;
+        overflow:auto;  
+        margin-top:20px;
+        scroll-behavior: smooth;
+
+      }
+
+
+
+
+   #footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background-color: rgb(157, 154, 154);
+    color: #fff;
+    padding:0px;
+    text-align: center;
+
+  }
+
+  #footer a {
+    color: #fff;
+    text-decoration: none;
+  }
