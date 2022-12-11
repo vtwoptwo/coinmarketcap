@@ -1,4 +1,7 @@
-# Coin Market Cap Endpoint: Listings/Latest
+
+# CMC
+## Coin Market Cap Endpoint: Listings/Latest
+<br>
 
 <!-- PROJECT SHIELDS -->
 
@@ -95,7 +98,7 @@ PS: I ended up using the following endpoint: [Crypto Listings Latest](https://co
 
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#CMC">back to top</a>)</p>
 
 ***
 
@@ -113,7 +116,7 @@ PS: I ended up using the following endpoint: [Crypto Listings Latest](https://co
 
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#CMC">back to top</a>)</p>
 
 ***
 
@@ -173,7 +176,7 @@ headers = {
    ```
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#CMC">back to top</a>)</p>
 
 ***
 
@@ -379,7 +382,7 @@ The following files were used to prepare the document for production:
 
 See the [open issues](https://github.com/vtwoptwo/coinmarketcap/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#CMC">back to top</a>)</p>
 
 ***
 
@@ -400,7 +403,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#CMC">back to top</a>)</p>
 
 ***
 
@@ -409,7 +412,7 @@ Don't forget to give the project a star! Thanks again!
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#CMC">back to top</a>)</p>
 
 ***
 <!-- MARKDOWN LINKS & IMAGES -->
