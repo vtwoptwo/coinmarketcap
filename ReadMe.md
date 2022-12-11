@@ -341,7 +341,7 @@ I find vue.js much easier to implement and would do so if this were a larger pro
 
 
 
-### Extracredit
+### Automation
 
 How would you set up a system that runs this process once every minute?
 
@@ -358,6 +358,10 @@ crontab -e
 ```sh 
 ***** /path/2/py /path/2/get_data.py
 ```
+
+If I had to create dynamic dashboard I would probably use a different framework. Something fast... something like: 
+
+![D3JS](https://img.shields.io/badge/D3JS-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 ### Configuration Management for Production
 1. Change the environment variables (I had a .env file locally), but you can use GITHUB secrets, or depending on your cloud service provider (e.g. Azure) you can globally configure environment variables for the web app. 
