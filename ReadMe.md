@@ -370,7 +370,7 @@ The following files were used to prepare the document for production:
 
 * create a .env
 * config.py
-* __init__.py
+* __ init __ . py
 
 
 ### Creating Different Pipelines in Github
