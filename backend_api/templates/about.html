@@ -1,6 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Checkout this README File from my GITHUB</h1>
-    <p>It basically covers the process of building this yourself ;)</p>
+
+<style scoped>
+    .about {
+        text-align: center;
+        font-size: 20px;
+        font: 1em "Courier New", Courier, monospace;
+        color: #fff;
+        background-color: rgba(107, 100, 100, 0.701);
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        padding: 10%;
+        
+        margin-top: 5%;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        font: 1em "Courier New", Courier, monospace;
+    }
+    a:hover {
+    color: red;
+    background-color: transparent;
+    }
+</style>
+
+<div class="about">
+    <a alt="x" href="https://github.com/vtwoptwo/coinmarketcap">
+    <h1> GO TO GITHUB</h1></a>
+    <img src=" {{url_for('static', filename= 'images/github.png')}}" style="height:100%; position: relative;">
+</div>
+
 {% endblock %}

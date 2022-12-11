@@ -2,44 +2,82 @@
 
 {% block content %}
 
-<h1>Coins</h1>
-  <p>This is the coins page of my Flask application.</p>
-    <button onclick = "pull_from_api()">Call API</button>
-      <div id="table-wrapper">
-        <div id="table-scroll">
-          <table id="modern-table">
-            <thead>
-              <tr>
-                <th>Symbol</th>
-                <th>Symbol Price</th>
-                <th>Market Cap</th>
-                <th>Market Cap %</th>
-                <th>Last Updated</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for coin in coins %} 
-                <tr>
-                    <td>{{coin.symbol}}</td>
-                    <td>{{coin.rice}}</td>
-                    <td>{{coin.market_cap}}</td>
-                    <td>{{coin.market_cap_pct}}</td>
-                    <td>{{coin.last_updated}}</td>
-            
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    <script>
+<style>
+  .container{
+        position: relative;
+        text-align: center;
+        color: darkgray;
+    }
+
+  #footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+    }
+
+  button {
+  border:none;
+  background-color: blue;
+  border-radius: 10px;
+  padding:5px;
+  color: white;
+  font: 1em "Courier New", Courier, monospace;
+  }
+  
+  button:hover {
+    background-color: green;
+  }
+
+
+  
+
+</style>
+<div class="container" alt="x">
+  <div class="row">
+      <div class="col-md-12">
+          <h1>Coins</h1>
+          <p>Here you can get the latest listings of coins by marketvalue. </p>
+            <button onclick = "pull_from_api()">Call API -> refresh the page</button>
+              <div id="table-wrapper">
+                <div id="table-scroll">
+                  <table id="modern-table">
+                    <thead>
+                      <tr>
+                        <th>Symbol</th>
+                        <th>Symbol Price</th>
+                        <th>Market Cap</th>
+                        <th>Market Cap %</th>
+                        <th>Last Updated</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for coin in coins %} 
+                        <tr>
+                            <td>{{coin.symbol}}</td>
+                            <td>{{coin.rice}}</td>
+                            <td>{{coin.market_cap}}</td>
+                            <td>{{coin.market_cap_pct}}</td>
+                            <td>{{coin.last_updated}}</td>
+                    
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                
+                </div>
+              </div>
+      </div>  
+  </div>
+</div>
+
+<script>
       function pull_from_api() {
-     
           fetch('/api_call', {methods: "GET"})
+          
           location.reload();
           fetch('/coins', {methods: "GET"})
       }
-    </script>
+  </script>
 
 
 {% endblock %}

@@ -30,5 +30,5 @@ def get_coins():
 @app.route('/api_call', methods=['GET'])
 def api_call(): 
     call()
-    print("Calling API")
+    print("Calling API...")
     return 200

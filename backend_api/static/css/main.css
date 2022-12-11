@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font: 1em "Courier New", Courier, monospace;
+
 }
 
 /* Main colors: orange and blue */
@@ -35,6 +36,21 @@ background-color: #444;
 .menu-item.active {
 background-color: var(--orange);
 }
+
+
+
+.container{
+  position: relative;
+  text-align: center;
+  color: darkgray;
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
 
 /* CSS for styling the table and center it */
 table#modern-table {
@@ -82,6 +98,10 @@ table#modern-table {
         scroll-behavior: smooth;
 
       }
+
+
+  
+
 
 
 

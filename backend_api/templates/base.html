@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My HTML Page</title>
+    <title>CMC API</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 
@@ -13,11 +13,11 @@
         <a href="{{url_for('index')}}" class="menu-item">Home</a>
         <a href="{{url_for('get_coins')}}" class="menu-item">Coins</a>
         <a href="{{url_for('about')}}" class="menu-item">About</a>
-        <a href="https://github.com/vtwoptwo/coinmarketcap" class="menu-item">          © created by vera </a>
-        {% endblock %}
+        <a href="https://github.com/vtwoptwo/coinmarketcap" class="menu-item">          © created by v2p2 </a>
+     
    
     </div>    
-
+   {% endblock %}
     {% block content %}
     <h1>My HTML Page</h1>
     <p>This is my basic HTML page with a CSS style sheet and a sticky menu.</p>
@@ -31,13 +31,13 @@
     
       <div id="footer">
     
-        <p>Copyright © Your Website</p>
+        <p>Copyright © CMC API</p>
       
         <script>
           // JavaScript for the current year in the copyright
           let date = new Date();
           let year = date.getFullYear();
-          document.querySelector('#footer p').innerHTML = 'Copyright &copy; Your Website ' + year;
+          document.querySelector('#footer p').innerHTML = 'CMC API ' + year;
         </script>
       </div>
       

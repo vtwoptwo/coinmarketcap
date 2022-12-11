@@ -188,32 +188,26 @@ headers = {
 Check out the outcome: 
 <div align="center">
   <a>
-    <img src="backend_api\static\images\mongodb_coinmarketcap.JPG ">
+    <img src="backend_api\static\images\home.JPG">
   </a>
 </div>
 
 <div align="center">
   <a>
-    <img src="backend_api\static\images\">
+    <img src="backend_api\static\images\coins.JPG">
   </a>
 </div>
 
 <div align="center">
   <a>
-    <img src="backend_api\static\images\">
-  </a>
-</div>
-
-<div align="center">
-  <a>
-    <img src="backend_api\static\images\">
+    <img src="backend_api\static\images\about.JPG">
   </a>
 </div>
 
 
 <div align="center">
   <a>
-    <img src="backend_api\static\images\">
+    <img src="backend_api\static\images\mongodb_coinmarketcap.JPG">
   </a>
 </div>
 

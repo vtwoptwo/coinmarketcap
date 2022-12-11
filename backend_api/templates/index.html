@@ -1,9 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+    .container {
+        margin-top: 10%;
+        position: relative;
+        text-align: center;
+        color: darkgray;
+    }
 
-    <h1>Home</h1>
-    <p>Welcome to this oddly primitve website</p>
+    .container img {
+        height: auto;
+        border-collapse: collapse;
+        border-radius: 10px;
+
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>hi!</h1>
+            <p>welcome to this oddly primitve website</p>
+
+            <img src="{{url_for('static',filename="images/giphy.gif")}}" >
+
+        </div>
+    </div>
+</div>
+
+    
 
 {% endblock %}
 

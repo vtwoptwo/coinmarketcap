@@ -29,6 +29,3 @@ mongo = PyMongo(app)
 
 from backend_api import routes
 
-with app.app_context():
-
-   
