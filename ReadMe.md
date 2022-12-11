@@ -314,7 +314,8 @@ def call():
         collection.insert_one(document)
 
 ```
-alternatively you could also use the following: * 
+alternatively you could also use the following: 
+
 ```sh
 collection.insert_many(documents)
 ```
@@ -324,7 +325,12 @@ collection.insert_many(documents)
 
 * This way I can either choose to run the process with a cron job every minute by running the get_data.py file,  or create a website with a frontend which runs the api calls at the press of a button. 
 
-* Limitations: The api call should only  be called every 60 seconds, as that is when the data renews at the endpoint.
+* Limitations: 
+* 
+*     The api call should only  be called every 60 seconds, as that is when the data renews at the endpoint.
+*     I have never used MongoDB before this project. I recommend for people who want to try this, to read up on MongoDB and do some open source intro-exercises in order to understand some basic concepts. 
+*     Flask is not optimal for enterprise grade deployments: Django would be more suitable.
+*     Frontend is not ideal. 
 
 
 
