@@ -1,4 +1,4 @@
-# Backend for Account Manager
+# Coin Market Cap Endpoint: Listings/Latest
 
 <!-- PROJECT SHIELDS -->
 
@@ -460,4 +460,3 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Docker-url]: https://www.docker.com/
 [MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
 [MongoDB-url]: https://www.mongodb.com/home
-
